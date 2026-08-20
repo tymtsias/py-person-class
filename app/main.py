@@ -19,13 +19,13 @@ def create_person_list(people: list) -> list:
     #     person = Person(name, age)
     #     person_list.append(person)
 
-    for person_data in people:
-        current_person = Person.people[person_data["name"]]
+    for info in people:
+        current_person = Person.people[info.get("name")]
 
-        if person_data.get("wife"):
-            current_person.wife = Person.people.get(person_data["wife"])
+        if info.get("wife"):
+            current_person.wife = Person.people.get(info.get("wife"))
 
-        if person_data.get("husband"):
-            current_person.husband = Person.people.get(person_data["husband"])
+        if info.get("husband"):
+            current_person.husband = Person.people.get(info.get("husband"))
 
     return pers_list
